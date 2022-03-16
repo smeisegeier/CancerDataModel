@@ -1,0 +1,128 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+	<NoWarn>$(NoWarn);1591</NoWarn>
+    <MSBuildAllProjects Condition="'$(MSBuildVersion)' == '' Or '$(MSBuildVersion)' &lt; '16.0'">$(MSBuildAllProjects);$(MSBuildThisFileFullPath)</MSBuildAllProjects>
+    <HasSharedItems>true</HasSharedItems>
+    <SharedGUID>a3592c9d-4608-4bcb-9e4c-bcafe21e3900</SharedGUID>
+  </PropertyGroup>
+  <PropertyGroup Label="Configuration">
+    <Import_RootNamespace>Rki.CancerDataModel</Import_RootNamespace>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="$(MSBuildThisFileDirectory)Models\AdtgekidBase.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\ADTGEKID\ADT_GEKID.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\ADTGEKID\Allgemein_ICD.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\ADTGEKID\Applikationsart.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\ADTGEKID\ATC.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\ADTGEKID\Bestrahlung.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\ADTGEKID\Datum.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\ADTGEKID\Dauer.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\ADTGEKID\Dauer_DEPR.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\ADTGEKID\Diagnose.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\ADTGEKID\Fernmetastase.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\ADTGEKID\GleasonScore.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\ADTGEKID\Histologie.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\ADTGEKID\Kontakt.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\ADTGEKID\Lieferregister.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\ADTGEKID\Metabolisch.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\ADTGEKID\Modul_Darm.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\ADTGEKID\Modul_Malignes_Melanom.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\ADTGEKID\Modul_Mamma.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\ADTGEKID\Modul_Prostata.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\ADTGEKID\Morphologie.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\ADTGEKID\Morphologie_Bluebook.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\ADTGEKID\Morphologie_ICD_O.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\ADTGEKID\OP.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\ADTGEKID\OPS.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\ADTGEKID\Patient.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\ADTGEKID\Patienten_Stammdaten.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\ADTGEKID\Perkutan.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\ADTGEKID\Protokoll.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\ADTGEKID\Protokollschluessel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\ADTGEKID\Residualstatus.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\ADTGEKID\Sonstige.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\ADTGEKID\ST.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\ADTGEKID\Substanz.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\ADTGEKID\SYST.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\ADTGEKID\TNM.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\ADTGEKID\Tod.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\ADTGEKID\Topographie_ICD.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\ADTGEKID\Tumor.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\ADTGEKID\Tumor_ICD.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\ADTGEKID\Verlauf.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\ADTGEKID\Weitere_Klassifikation.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\ADTGEKID\Zielgebiet.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\DimensionBase.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\Dimensions\DiagnosisSafety.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\Dimensions\DiseaseProgression.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\Dimensions\DistantMetastasis.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\Dimensions\Ecog.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\Dimensions\Gender.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\Dimensions\Grading.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\Dimensions\Histology.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\Dimensions\HormonReceptor.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\Dimensions\Icd.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\Dimensions\Location.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\Dimensions\M.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\Dimensions\N.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\Dimensions\OpIntention.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\Dimensions\Ops.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\Dimensions\Protocol.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\Dimensions\Quote.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\Dimensions\Radiotherapy.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\Dimensions\ReceptorStatus.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\Dimensions\ReportType.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\Dimensions\ResidualStatus.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\Dimensions\Side.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\Dimensions\Substance.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\Dimensions\SystemicTherapy.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\Dimensions\T.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\Dimensions\TherapyDuration.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\Dimensions\TherapyIntention.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\Dimensions\TherapyLine.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\Dimensions\TherapyRelation.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\Dimensions\TherapyStop.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\Dimensions\TherapyTime.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\Dimensions\TumorConference.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\Dimensions\TumorStatus.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\Dimensions\TumorStatusDistantMetastasis.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\Dimensions\Uicc.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="$(MSBuildThisFileDirectory)Models\Dimensions\DiagnosisSafety.json" />
+    <Content Include="$(MSBuildThisFileDirectory)Models\Dimensions\DiseaseProgression.json" />
+    <Content Include="$(MSBuildThisFileDirectory)Models\Dimensions\DistantMetastasis.json" />
+    <Content Include="$(MSBuildThisFileDirectory)Models\Dimensions\Ecog.json" />
+    <Content Include="$(MSBuildThisFileDirectory)Models\Dimensions\Gender.json" />
+    <Content Include="$(MSBuildThisFileDirectory)Models\Dimensions\Grading.json" />
+    <Content Include="$(MSBuildThisFileDirectory)Models\Dimensions\Histology.json" />
+    <Content Include="$(MSBuildThisFileDirectory)Models\Dimensions\HormonReceptor.json" />
+    <Content Include="$(MSBuildThisFileDirectory)Models\Dimensions\Icd.json" />
+    <Content Include="$(MSBuildThisFileDirectory)Models\Dimensions\Location.json" />
+    <Content Include="$(MSBuildThisFileDirectory)Models\Dimensions\M.json" />
+    <Content Include="$(MSBuildThisFileDirectory)Models\Dimensions\N.json" />
+    <Content Include="$(MSBuildThisFileDirectory)Models\Dimensions\OpIntention.json" />
+    <Content Include="$(MSBuildThisFileDirectory)Models\Dimensions\Ops.json" />
+    <Content Include="$(MSBuildThisFileDirectory)Models\Dimensions\Protocol.json" />
+    <Content Include="$(MSBuildThisFileDirectory)Models\Dimensions\Quote.json" />
+    <Content Include="$(MSBuildThisFileDirectory)Models\Dimensions\Radiotherapy.json" />
+    <Content Include="$(MSBuildThisFileDirectory)Models\Dimensions\ReceptorStatus.json" />
+    <Content Include="$(MSBuildThisFileDirectory)Models\Dimensions\ReportType.json" />
+    <Content Include="$(MSBuildThisFileDirectory)Models\Dimensions\ResidualStatus.json" />
+    <Content Include="$(MSBuildThisFileDirectory)Models\Dimensions\Side.json" />
+    <Content Include="$(MSBuildThisFileDirectory)Models\Dimensions\Substance.json" />
+    <Content Include="$(MSBuildThisFileDirectory)Models\Dimensions\SystemicTherapy.json" />
+    <Content Include="$(MSBuildThisFileDirectory)Models\Dimensions\T.json" />
+    <Content Include="$(MSBuildThisFileDirectory)Models\Dimensions\TherapyDuration.json" />
+    <Content Include="$(MSBuildThisFileDirectory)Models\Dimensions\TherapyIntention.json" />
+    <Content Include="$(MSBuildThisFileDirectory)Models\Dimensions\TherapyLine.json" />
+    <Content Include="$(MSBuildThisFileDirectory)Models\Dimensions\TherapyRelation.json" />
+    <Content Include="$(MSBuildThisFileDirectory)Models\Dimensions\TherapyStop.json" />
+    <Content Include="$(MSBuildThisFileDirectory)Models\Dimensions\TherapyTime.json" />
+    <Content Include="$(MSBuildThisFileDirectory)Models\Dimensions\TumorConference.json" />
+    <Content Include="$(MSBuildThisFileDirectory)Models\Dimensions\TumorStatus.json" />
+    <Content Include="$(MSBuildThisFileDirectory)Models\Dimensions\TumorStatusDistantMetastasis.json" />
+    <Content Include="$(MSBuildThisFileDirectory)Models\Dimensions\Uicc.json" />
+  </ItemGroup>
+</Project>

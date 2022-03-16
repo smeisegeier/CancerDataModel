@@ -1,0 +1,18 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.32126.317
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "Rki.CancerDataModel", "Rki.CancerDataModel.shproj", "{A3592C9D-4608-4BCB-9E4C-BCAFE21E3900}"
+EndProject
+Global
+	GlobalSection(SharedMSBuildProjectFiles) = preSolution
+		Rki.CancerDataModel.projitems*{a3592c9d-4608-4bcb-9e4c-bcafe21e3900}*SharedItemsImports = 13
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {8DE0C09E-02EA-4F9B-BE0D-FECCCA327F1E}
+	EndGlobalSection
+EndGlobal
