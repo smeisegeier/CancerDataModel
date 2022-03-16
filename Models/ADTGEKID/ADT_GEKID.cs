@@ -5,7 +5,8 @@ using System.Linq;
 using System.Xml.Serialization;
 namespace Rki.CancerDataModel.Models.ADTGEKID
 {
-    [XmlRoot]
+    // root namespace is needed
+    [XmlRoot(Namespace = Globals.XSDNAMESPACE, IsNullable = true)]
     public class ADT_GEKID : AdtgekidBase
     {
         public Lieferregister Lieferregister { get; set; }
@@ -18,7 +19,7 @@ namespace Rki.CancerDataModel.Models.ADTGEKID
         public Schema_Version Schema_Version { get; set; } = Schema_Version.Item300RKI;
 
         [XmlAttribute(Namespace = Globals.XSINAMESPACE)]
-        public string schemaLocation { get; set; } 
+        public string schemaLocation { get; set; } = $"{Globals.XSDNAMESPACE} {Globals.XSDFILENAME}";
     }
     public enum DCI_Typ
     {

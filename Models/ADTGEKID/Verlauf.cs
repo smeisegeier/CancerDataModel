@@ -26,7 +26,6 @@ namespace Rki.CancerDataModel.Models.ADTGEKID
         [XmlArrayItem("Fernmetastase", IsNullable = false)]
         public Fernmetastase[] Menge_FM { get; set; }
 
-
         public Modul_Prostata Modul_Prostata { get; set; }
 
         public Modul_Malignes_Melanom Modul_Malignes_Melanom { get; set; }

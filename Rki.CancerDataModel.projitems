@@ -126,4 +126,16 @@
     <Content Include="$(MSBuildThisFileDirectory)Models\Dimensions\TumorStatusDistantMetastasis.json" />
     <Content Include="$(MSBuildThisFileDirectory)Models\Dimensions\Uicc.json" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="$(MSBuildThisFileDirectory)Schemas\ADT_GEKID_v2.2.1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <Content Include="$(MSBuildThisFileDirectory)Schemas\ADT_GEKID_v3.0.0.5_RKI.xsd">
+      <SubType>Designer</SubType>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <None Include="$(MSBuildThisFileDirectory)Schemas\ADT_GEKID_v3.0.0.xsd">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
 </Project>
