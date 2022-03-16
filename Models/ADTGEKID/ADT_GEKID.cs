@@ -15,9 +15,9 @@ namespace Rki.CancerDataModel.Models.ADTGEKID
         public List<Patient> Menge_Patient { get; set; }
 
         [XmlAttribute]
-        public Schema_Version Schema_Version { get; set; }
+        public Schema_Version Schema_Version { get; set; } = Schema_Version.Item300RKI;
 
-        [XmlAttribute]
+        [XmlAttribute(Namespace = Globals.XSINAMESPACE)]
         public string schemaLocation { get; set; } 
     }
     public enum DCI_Typ
@@ -28,9 +28,6 @@ namespace Rki.CancerDataModel.Models.ADTGEKID
     }
     public enum ISO3199_2_Typ
     {
-        // TODO remove default, no choice
-        [XmlEnum(Name = "")]
-        Default = 0,
         [XmlEnum("DE-BY")]
         DE_BY,
         [XmlEnum("DE-BW")]
@@ -66,9 +63,6 @@ namespace Rki.CancerDataModel.Models.ADTGEKID
     }
     public enum R_Typ
     {
-        // TODO choice?
-        [XmlEnum(Name = "")]
-        Default = 0,
         R0,
         R1,
         [XmlEnum("R1(is)")]
@@ -161,46 +155,46 @@ namespace Rki.CancerDataModel.Models.ADTGEKID
     }
     public enum TNM_TypTNM_y_Symbol
     {
-        y,
+        y
     }
     public enum TNM_TypTNM_r_Symbol
     {
-        r,
+        r
     }
     public enum TNM_TypTNM_a_Symbol
     {
-        a,
+        a
     }
     public enum TNM_TypTNM_c_p_u_Praefix_T
     {
         c,
         p,
-        u,
+        u
     }
     public enum TNM_TypTNM_c_p_u_Praefix_N
     {
         c,
         p,
-        u,
+        u
     }
     public enum TNM_TypTNM_c_p_u_Praefix_M
     {
         c,
         p,
-        u,
+        u
     }
     public enum TNM_TypTNM_L
     {
         LX,
         L0,
-        L1,
+        L1
     }
     public enum TNM_TypTNM_V
     {
         VX,
         V0,
         V1,
-        V2,
+        V2
     }
     public enum TNM_TypTNM_Pn
     {
@@ -451,8 +445,6 @@ namespace Rki.CancerDataModel.Models.ADTGEKID
     }
     public enum ST_Stellung_OP_Typ
     {
-        [XmlEnum(Name = "")]
-        Default = 0,
         O,
         A,
         N,
@@ -964,313 +956,6 @@ namespace Rki.CancerDataModel.Models.ADTGEKID
         Item102,
         [XmlEnum("10.3")]
         Item103,
-    }
-
-    [Obsolete]
-    public enum Bestrahlung_Zielgebiet_Typ
-    {
-        [XmlEnum(Name = "")]
-        Default = 0,
-        [XmlEnum("1.")]
-        Item1,
-        [XmlEnum("1.1.")]
-        Item11,
-        [XmlEnum("1.2.")]
-        Item12,
-        [XmlEnum("1.3.")]
-        Item13,
-        [XmlEnum("2.")]
-        Item2,
-        [XmlEnum("2.+")]
-        Item21,
-        [XmlEnum("2.-")]
-        Item22,
-        [XmlEnum("2.1.")]
-        Item211,
-        [XmlEnum("2.1.+")]
-        Item212,
-        [XmlEnum("2.1.-")]
-        Item213,
-        [XmlEnum("2.2.")]
-        Item221,
-        [XmlEnum("2.2.+")]
-        Item222,
-        [XmlEnum("2.2.-")]
-        Item223,
-        [XmlEnum("2.3.")]
-        Item23,
-        [XmlEnum("2.3.+")]
-        Item231,
-        [XmlEnum("2.3.-")]
-        Item232,
-        [XmlEnum("2.4.")]
-        Item24,
-        [XmlEnum("2.4.+")]
-        Item241,
-        [XmlEnum("2.4.-")]
-        Item242,
-        [XmlEnum("2.5.")]
-        Item25,
-        [XmlEnum("2.5.+")]
-        Item251,
-        [XmlEnum("2.5.-")]
-        Item252,
-        [XmlEnum("2.6.")]
-        Item26,
-        [XmlEnum("2.6.+")]
-        Item261,
-        [XmlEnum("2.6.-")]
-        Item262,
-        [XmlEnum("2.7.")]
-        Item27,
-        [XmlEnum("2.7.+")]
-        Item271,
-        [XmlEnum("2.7.-")]
-        Item272,
-        [XmlEnum("2.8.")]
-        Item28,
-        [XmlEnum("2.8.+")]
-        Item281,
-        [XmlEnum("2.8.-")]
-        Item282,
-        [XmlEnum("2.9.")]
-        Item29,
-        [XmlEnum("3.")]
-        Item3,
-        [XmlEnum("3.+")]
-        Item31,
-        [XmlEnum("3.-")]
-        Item32,
-        [XmlEnum("3.1.")]
-        Item311,
-        [XmlEnum("3.1.+")]
-        Item312,
-        [XmlEnum("3.1.-")]
-        Item313,
-        [XmlEnum("3.2.")]
-        Item321,
-        [XmlEnum("3.2.+")]
-        Item322,
-        [XmlEnum("3.2.-")]
-        Item323,
-        [XmlEnum("3.3.")]
-        Item33,
-        [XmlEnum("3.3.+")]
-        Item331,
-        [XmlEnum("3.3.-")]
-        Item332,
-        [XmlEnum("3.4.")]
-        Item34,
-        [XmlEnum("3.4.+")]
-        Item341,
-        [XmlEnum("3.4.-")]
-        Item342,
-        [XmlEnum("3.5.")]
-        Item35,
-        [XmlEnum("3.5.+")]
-        Item351,
-        [XmlEnum("3.5.-")]
-        Item352,
-        [XmlEnum("3.6.")]
-        Item36,
-        [XmlEnum("3.6.+")]
-        Item361,
-        [XmlEnum("3.6.-")]
-        Item362,
-        [XmlEnum("3.7.")]
-        Item37,
-        [XmlEnum("4.")]
-        Item4,
-        [XmlEnum("4.+")]
-        Item41,
-        [XmlEnum("4.-")]
-        Item42,
-        [XmlEnum("4.1.")]
-        Item411,
-        [XmlEnum("4.1.+")]
-        Item412,
-        [XmlEnum("4.1.-")]
-        Item413,
-        [XmlEnum("4.2.")]
-        Item421,
-        [XmlEnum("4.2.+")]
-        Item422,
-        [XmlEnum("4.2.-")]
-        Item423,
-        [XmlEnum("4.3.")]
-        Item43,
-        [XmlEnum("4.3.+")]
-        Item431,
-        [XmlEnum("4.3.-")]
-        Item432,
-        [XmlEnum("4.4.")]
-        Item44,
-        [XmlEnum("4.4.+")]
-        Item441,
-        [XmlEnum("4.4.-")]
-        Item442,
-        [XmlEnum("4.5.")]
-        Item45,
-        [XmlEnum("4.5.+")]
-        Item451,
-        [XmlEnum("4.5.-")]
-        Item452,
-        [XmlEnum("4.6.")]
-        Item46,
-        [XmlEnum("4.6.+")]
-        Item461,
-        [XmlEnum("4.6.-")]
-        Item462,
-        [XmlEnum("4.7.")]
-        Item47,
-        [XmlEnum("4.8.")]
-        Item48,
-        [XmlEnum("4.8.+")]
-        Item481,
-        [XmlEnum("4.8.-")]
-        Item482,
-        [XmlEnum("4.9.")]
-        Item49,
-        [XmlEnum("4.9.+")]
-        Item491,
-        [XmlEnum("4.9.-")]
-        Item492,
-        [XmlEnum("5.")]
-        Item5,
-        [XmlEnum("5.+")]
-        Item51,
-        [XmlEnum("5.-")]
-        Item52,
-        [XmlEnum("5.1.")]
-        Item511,
-        [XmlEnum("5.1.+")]
-        Item512,
-        [XmlEnum("5.1.-")]
-        Item513,
-        [XmlEnum("5.2.")]
-        Item521,
-        [XmlEnum("5.2.+")]
-        Item522,
-        [XmlEnum("5.2.-")]
-        Item523,
-        [XmlEnum("5.3.")]
-        Item53,
-        [XmlEnum("5.3.+")]
-        Item531,
-        [XmlEnum("5.3.-")]
-        Item532,
-        [XmlEnum("5.4.")]
-        Item54,
-        [XmlEnum("5.4.+")]
-        Item541,
-        [XmlEnum("5.4.-")]
-        Item542,
-        [XmlEnum("5.5.")]
-        Item55,
-        [XmlEnum("5.5.+")]
-        Item551,
-        [XmlEnum("5.5.-")]
-        Item552,
-        [XmlEnum("5.6.")]
-        Item56,
-        [XmlEnum("5.6.+")]
-        Item561,
-        [XmlEnum("5.6.-")]
-        Item562,
-        [XmlEnum("5.7.")]
-        Item57,
-        [XmlEnum("5.7.+")]
-        Item571,
-        [XmlEnum("5.7.-")]
-        Item572,
-        [XmlEnum("5.7.1.")]
-        Item5711,
-        [XmlEnum("5.7.1.+")]
-        Item5712,
-        [XmlEnum("5.7.1.-")]
-        Item5713,
-        [XmlEnum("5.7.2.")]
-        Item5721,
-        [XmlEnum("5.7.2.+")]
-        Item5722,
-        [XmlEnum("5.7.2.-")]
-        Item5723,
-        [XmlEnum("5.8.")]
-        Item58,
-        [XmlEnum("5.8.+")]
-        Item581,
-        [XmlEnum("5.8.-")]
-        Item582,
-        [XmlEnum("5.9.")]
-        Item59,
-        [XmlEnum("5.9.+")]
-        Item591,
-        [XmlEnum("5.9.-")]
-        Item592,
-        [XmlEnum("5.10.")]
-        Item510,
-        [XmlEnum("5.10.+")]
-        Item5101,
-        [XmlEnum("5.10.-")]
-        Item5102,
-        [XmlEnum("5.11.")]
-        Item5111,
-        [XmlEnum("5.11.+")]
-        Item5112,
-        [XmlEnum("5.11.-")]
-        Item5113,
-        [XmlEnum("5.12.")]
-        Item5121,
-        [XmlEnum("6.")]
-        Item6,
-        [XmlEnum("6.1.")]
-        Item61,
-        [XmlEnum("6.2.")]
-        Item62,
-        [XmlEnum("6.3.")]
-        Item63,
-        [XmlEnum("6.4.")]
-        Item64,
-        [XmlEnum("6.5.")]
-        Item65,
-        [XmlEnum("6.6.")]
-        Item66,
-        [XmlEnum("6.7.")]
-        Item67,
-        [XmlEnum("6.8.")]
-        Item68,
-        [XmlEnum("6.9.")]
-        Item69,
-        [XmlEnum("6.10.")]
-        Item610,
-        [XmlEnum("6.11.")]
-        Item611,
-        [XmlEnum("6.12.")]
-        Item612,
-        [XmlEnum("6.13.")]
-        Item613,
-        [XmlEnum("6.14.")]
-        Item614,
-        [XmlEnum("6.15.")]
-        Item615,
-        [XmlEnum("6.16.")]
-        Item616,
-        [XmlEnum("7.")]
-        Item7,
-        [XmlEnum("7.+")]
-        Item71,
-        [XmlEnum("7.-")]
-        Item72,
-        [XmlEnum("7.1.")]
-        Item711,
-        [XmlEnum("7.2.")]
-        Item721,
-        [XmlEnum("8.")]
-        Item8,
-        [XmlEnum("8.1.")]
-        Item81,
-        [XmlEnum("8.2.")]
-        Item82,
     }
     public enum Bestrahlung_Seite_Zielgebiet_Typ
     {

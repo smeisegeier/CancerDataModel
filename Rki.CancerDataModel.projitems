@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
-	<NoWarn>$(NoWarn);1591</NoWarn>
+    <NoWarn>$(NoWarn);1591</NoWarn>
     <MSBuildAllProjects Condition="'$(MSBuildVersion)' == '' Or '$(MSBuildVersion)' &lt; '16.0'">$(MSBuildAllProjects);$(MSBuildThisFileFullPath)</MSBuildAllProjects>
     <HasSharedItems>true</HasSharedItems>
     <SharedGUID>a3592c9d-4608-4bcb-9e4c-bcafe21e3900</SharedGUID>
@@ -10,6 +10,7 @@
     <Import_RootNamespace>Rki.CancerDataModel</Import_RootNamespace>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="$(MSBuildThisFileDirectory)Globals.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Models\AdtgekidBase.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Models\ADTGEKID\ADT_GEKID.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Models\ADTGEKID\Allgemein_ICD.cs" />

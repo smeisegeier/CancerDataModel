@@ -7,7 +7,6 @@ namespace Rki.CancerDataModel.Models.ADTGEKID
 {
     public class Histologie
     {
-        // TODO array vs list
         public Morphologie Morphologie { get; set; }
 
         public Grading_Typ Grading { get; set; }

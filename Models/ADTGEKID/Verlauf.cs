@@ -3,15 +3,14 @@ using System.Xml.Serialization;
 
 namespace Rki.CancerDataModel.Models.ADTGEKID
 {
-    // TODO Verlauf sill not clear
+    // TODO Verlauf still not clear
     public class Verlauf : AdtgekidBase
     {
-
         public Histologie Histologie { get; set; }
         
         public TNM TNM { get; set; }
         
-        [System.Xml.Serialization.XmlArrayItem("Weitere_Klassifikation", IsNullable = false)]
+        [XmlArrayItem("Weitere_Klassifikation", IsNullable = false)]
         public Weitere_Klassifikation[] Menge_Weitere_Klassifikation { get; set; }
         
         public Datum Untersuchungsdatum_Verlauf { get; set; }
@@ -24,7 +23,7 @@ namespace Rki.CancerDataModel.Models.ADTGEKID
 
         public Verlauf_Tumorstatus_Fernmetastasen_Typ Verlauf_Tumorstatus_Fernmetastasen { get; set; }
 
-        [System.Xml.Serialization.XmlArrayItem("Fernmetastase", IsNullable = false)]
+        [XmlArrayItem("Fernmetastase", IsNullable = false)]
         public Fernmetastase[] Menge_FM { get; set; }
 
 
@@ -35,7 +34,7 @@ namespace Rki.CancerDataModel.Models.ADTGEKID
         public Tod Tod { get; set; }
 
 
-        [System.Xml.Serialization.XmlAttribute()]
+        [XmlAttribute()]
         public string Verlauf_ID { get; set; }
     }
 }
