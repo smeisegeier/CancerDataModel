@@ -19,6 +19,8 @@ namespace Rki.CancerDataModel.Models
 
         public double Weight { get; set; }
 
+
+        // TODO remove 
         /// <summary>
         /// Fetch and deserialze classes that are given as json.
         /// Follows the convention: 
