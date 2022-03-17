@@ -20,7 +20,7 @@ namespace Rki.CancerDataModel.Models.ADTGEKID
         public SYST[] Menge_SYST { get; set; }
 
         [XmlArrayItem("Folgeereignis")]
-        public List<Verlauf> Menge_Folgeereignis { get; set; }
+        public List<Folgeereignis> Menge_Folgeereignis { get; set; }
 
     }
 }

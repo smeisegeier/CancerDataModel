@@ -234,12 +234,6 @@ X - keines</xs:documentation>
 			<xs:enumeration value="X"/>
 		</xs:restriction>
 	</xs:simpleType>
-	<xs:complexType name="DEPR_Datum_NU_Typ">
-		<xs:choice>
-			<xs:element name="Datum" type="Datum_Monat_oder_Jahr_genau_Typ"/>
-			<xs:element name="NU" type="NU_Typ"/>
-		</xs:choice>
-	</xs:complexType>
 	<xs:complexType name="Diagnose_Typ">
 		<xs:all>
 			<xs:element name="Datum" type="Datum_Monat_oder_Jahr_genau_Typ"/>

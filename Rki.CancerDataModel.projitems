@@ -51,7 +51,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)Models\ADTGEKID\Topographie_ICD.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Models\ADTGEKID\Tumor.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Models\ADTGEKID\Tumor_ICD.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Models\ADTGEKID\Verlauf.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\ADTGEKID\Folgeereignis.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Models\ADTGEKID\Weitere_Klassifikation.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Models\ADTGEKID\Zielgebiet.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Models\DimensionBase.cs" />
@@ -89,42 +89,6 @@
     <Compile Include="$(MSBuildThisFileDirectory)Models\Dimensions\TumorStatus.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Models\Dimensions\TumorStatusDistantMetastasis.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Models\Dimensions\Uicc.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="$(MSBuildThisFileDirectory)Models\Dimensions\DiagnosisSafety.json" />
-    <Content Include="$(MSBuildThisFileDirectory)Models\Dimensions\DiseaseProgression.json" />
-    <Content Include="$(MSBuildThisFileDirectory)Models\Dimensions\DistantMetastasis.json" />
-    <Content Include="$(MSBuildThisFileDirectory)Models\Dimensions\Ecog.json" />
-    <Content Include="$(MSBuildThisFileDirectory)Models\Dimensions\Gender.json" />
-    <Content Include="$(MSBuildThisFileDirectory)Models\Dimensions\Grading.json" />
-    <Content Include="$(MSBuildThisFileDirectory)Models\Dimensions\Histology.json" />
-    <Content Include="$(MSBuildThisFileDirectory)Models\Dimensions\HormonReceptor.json" />
-    <Content Include="$(MSBuildThisFileDirectory)Models\Dimensions\Icd.json" />
-    <Content Include="$(MSBuildThisFileDirectory)Models\Dimensions\Location.json" />
-    <Content Include="$(MSBuildThisFileDirectory)Models\Dimensions\M.json" />
-    <Content Include="$(MSBuildThisFileDirectory)Models\Dimensions\N.json" />
-    <Content Include="$(MSBuildThisFileDirectory)Models\Dimensions\OpIntention.json" />
-    <Content Include="$(MSBuildThisFileDirectory)Models\Dimensions\Ops.json" />
-    <Content Include="$(MSBuildThisFileDirectory)Models\Dimensions\Protocol.json" />
-    <Content Include="$(MSBuildThisFileDirectory)Models\Dimensions\Quote.json" />
-    <Content Include="$(MSBuildThisFileDirectory)Models\Dimensions\Radiotherapy.json" />
-    <Content Include="$(MSBuildThisFileDirectory)Models\Dimensions\ReceptorStatus.json" />
-    <Content Include="$(MSBuildThisFileDirectory)Models\Dimensions\ReportType.json" />
-    <Content Include="$(MSBuildThisFileDirectory)Models\Dimensions\ResidualStatus.json" />
-    <Content Include="$(MSBuildThisFileDirectory)Models\Dimensions\Side.json" />
-    <Content Include="$(MSBuildThisFileDirectory)Models\Dimensions\Substance.json" />
-    <Content Include="$(MSBuildThisFileDirectory)Models\Dimensions\SystemicTherapy.json" />
-    <Content Include="$(MSBuildThisFileDirectory)Models\Dimensions\T.json" />
-    <Content Include="$(MSBuildThisFileDirectory)Models\Dimensions\TherapyDuration.json" />
-    <Content Include="$(MSBuildThisFileDirectory)Models\Dimensions\TherapyIntention.json" />
-    <Content Include="$(MSBuildThisFileDirectory)Models\Dimensions\TherapyLine.json" />
-    <Content Include="$(MSBuildThisFileDirectory)Models\Dimensions\TherapyRelation.json" />
-    <Content Include="$(MSBuildThisFileDirectory)Models\Dimensions\TherapyStop.json" />
-    <Content Include="$(MSBuildThisFileDirectory)Models\Dimensions\TherapyTime.json" />
-    <Content Include="$(MSBuildThisFileDirectory)Models\Dimensions\TumorConference.json" />
-    <Content Include="$(MSBuildThisFileDirectory)Models\Dimensions\TumorStatus.json" />
-    <Content Include="$(MSBuildThisFileDirectory)Models\Dimensions\TumorStatusDistantMetastasis.json" />
-    <Content Include="$(MSBuildThisFileDirectory)Models\Dimensions\Uicc.json" />
   </ItemGroup>
   <ItemGroup>
     <None Include="$(MSBuildThisFileDirectory)Schemas\ADT_GEKID_v2.2.1.xsd">
