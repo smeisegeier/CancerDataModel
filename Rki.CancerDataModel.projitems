@@ -94,7 +94,7 @@
     <None Include="$(MSBuildThisFileDirectory)Schemas\ADT_GEKID_v2.2.1.xsd">
       <SubType>Designer</SubType>
     </None>
-    <Content Include="$(MSBuildThisFileDirectory)Schemas\ADT_GEKID_v3.0.0.5_RKI.xsd">
+    <Content Include="$(MSBuildThisFileDirectory)Schemas\ADT_GEKID_v3.0.0.6_RKI.xsd">
       <SubType>Designer</SubType>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

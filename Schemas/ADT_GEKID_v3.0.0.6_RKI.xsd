@@ -286,15 +286,12 @@ X - keines</xs:documentation>
 			</xs:element>
 			<xs:element name="Histologie" type="Histologie_Typ" minOccurs="0"/>
 			<xs:element name="Menge_FM" type="Menge_FM_Typ" minOccurs="0"/>
-			<xs:element name="cTNM" type="TNM_Typ" minOccurs="0">
-				<xs:annotation>
-					<xs:documentation>Prätherapeutisches TNM</xs:documentation>
-				</xs:annotation>
-			</xs:element>
-			<xs:element name="pTNM" type="TNM_Typ" minOccurs="0">
-				<xs:annotation>
-					<xs:documentation>Postoperatives TNM. Es ist nicht nötig, dass alle Bestandteile der TNM-Formel die Einstufung 'p' aufweisen.</xs:documentation>
-				</xs:annotation>
+			<xs:element name="Menge_TNM" minOccurs="0">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="TNM" type="TNM_Typ" maxOccurs="2"/>
+					</xs:sequence>
+				</xs:complexType>
 			</xs:element>
 			<xs:element name="Menge_Weitere_Klassifikation" type="Menge_Weitere_Klassifikation_Typ" minOccurs="0"/>
 			<xs:element name="Modul_Mamma" type="Modul_Mamma_Typ" minOccurs="0"/>
