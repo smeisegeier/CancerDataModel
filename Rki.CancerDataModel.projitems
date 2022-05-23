@@ -100,5 +100,8 @@
     <None Include="$(MSBuildThisFileDirectory)Schemas\ADT_GEKID_v3.0.0.xsd">
       <SubType>Designer</SubType>
     </None>
+    <None Include="$(MSBuildThisFileDirectory)Schemas\oBDS_v3.0.0.xsd">
+      <SubType>Designer</SubType>
+    </None>
   </ItemGroup>
 </Project>
