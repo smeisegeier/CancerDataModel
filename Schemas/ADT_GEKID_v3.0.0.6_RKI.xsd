@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- edited with XMLSpy v2021 rel. 3 (x64) (http://www.altova.com) by MeisegeierS_virtual (Robert Koch-Institut) -->
-<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://www.gekid.de/namespace" xmlns:tns="http://www.gekid.de/namespace" targetNamespace="http://www.gekid.de/namespace" elementFormDefault="qualified" attributeFormDefault="unqualified" version="3.0.0.2_RKI">
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://www.gekid.de/namespace" xmlns:tns="http://www.gekid.de/namespace" xmlns:altova="http://www.altova.com/xml-schema-extensions" targetNamespace="http://www.gekid.de/namespace" elementFormDefault="qualified" attributeFormDefault="unqualified" version="3.0.0.2_RKI">
 	<xs:complexType name="Abstand_Ereignisse_Typ">
 		<xs:annotation>
 			<xs:documentation>Abstand in Tagen oder N oder U. N ist zu verwenden, wenn Ereignis noch nicht abgeschlossen.</xs:documentation>
@@ -31,11 +31,17 @@
 			</xs:extension>
 		</xs:simpleContent>
 	</xs:complexType>
-	<xs:element name="ADT_GEKID">
+	<xs:element name="ZfKD_Lieferdatensatz">
 		<xs:complexType>
 			<xs:sequence>
 				<xs:element name="Lieferregister" type="Lieferregister_Typ"/>
-				<xs:element name="Lieferdatum" type="Datum_Tag_genau_Typ"/>
+				<xs:element name="Lieferdatum">
+					<xs:complexType>
+						<xs:complexContent>
+							<xs:extension base="Datum_Tag_genau_Typ"/>
+						</xs:complexContent>
+					</xs:complexType>
+				</xs:element>
 				<xs:element name="Menge_Patient">
 					<xs:complexType>
 						<xs:sequence>
@@ -101,7 +107,13 @@
 								<xs:documentation>Erste Version beruhend auf Basisdatensatz 2021</xs:documentation>
 							</xs:annotation>
 						</xs:enumeration>
-						<xs:enumeration value="3.0.0-RKI"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:attribute>
+			<xs:attribute name="Schema_Version_Development">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:enumeration value="3.0.0.6_RKI"/>
 					</xs:restriction>
 				</xs:simpleType>
 			</xs:attribute>
@@ -118,7 +130,7 @@
 	<xs:complexType name="Allgemein_ICD_Typ">
 		<xs:sequence>
 			<xs:element name="Code" type="ICD_Code_Typ"/>
-			<xs:element name="Version" type="ICD_Version_Typ"/>
+			<xs:element name="Version" type="ICD_Version_Typ" minOccurs="0"/>
 		</xs:sequence>
 	</xs:complexType>
 	<xs:simpleType name="datatypeCtrimmed">
@@ -137,40 +149,15 @@
 			<xs:pattern value="([&#9;-&#10;]|&#13;|[ -~]|[ -¬]|[®-ž]|[Ƈ-ƈ]|Ə|ƒ|Ɨ|[Ơ-ơ]|[Ư-ư]|Ʒ|[Ǎ-ǜ]|[Ǟ-ǟ]|[Ǣ-ǰ]|[Ǵ-ǵ]|[Ǹ-ǿ]|[Ȓ-ȓ]|[Ș-ț]|[Ȟ-ȟ]|[ȧ-ȳ]|ə|ɨ|ʒ|ʰ|ʳ|[ʹ-ʺ]|[ʾ-ʿ]|ˆ|ˈ|ˌ|˜|ˢ|Ά|[Έ-Ί]|Ό|[Ύ-Ρ]|[Σ-ώ]|Ѝ|[А-Ъ]|Ь|[Ю-ъ]|ь|[ю-я]|ѝ|ᵈ|ᵗ|[Ḃ-ḃ]|[Ḇ-ḇ]|[Ḋ-ḑ]|[Ḝ-ḫ]|[ḯ-ḷ]|[Ḻ-ḻ]|[Ṁ-ṉ]|[Ṓ-ṛ]|[Ṟ-ṣ]|[Ṫ-ṯ]|[Ẁ-ẇ]|[Ẍ-ẗ]|ẞ|[Ạ-ỹ]|[‘-‚]|[“-„]|[†-‡]|…|‰|[‹-›]|⁰|[⁴-⁹]|[ⁿ-₉]|€|™|∞|[≤-≥]|A̋|C(̀|̄|̆|̈|̕|̣|̦|̨̆)|D̂|F(̀|̄)|G̀|H(̄|̦|̱)|J(́|̌)|K(̀|̂|̄|̇|̕|̛|̦|͟H|͟h)|L(̂|̥|̥̄|̦)|M(̀|̂|̆|̐)|N(̂|̄|̆|̦)|P(̀|̄|̕|̣)|R(̆|̥|̥̄)|S(̀|̄|̛̄|̱)|T(̀|̄|̈|̕|̛)|U̇|Z(̀|̄|̆|̈|̧)|a̋|c(̀|̄|̆|̈|̕|̣|̦|̨̆)|d̂|f(̀|̄)|g̀|h(̄|̦)|j́|k(̀|̂|̄|̇|̕|̛|̦|͟h)|l(̂|̥|̥̄|̦)|m(̀|̂|̆|̐)|n(̂|̄|̆|̦)|p(̀|̄|̕|̣)|r(̆|̥|̥̄)|s(̀|̄|̛̄|̱)|t(̀|̄|̕|̛)|u̇|z(̀|̄|̆|̈|̧)|Ç̆|Û̄|ç̆|û̄|ÿ́|Č(̕|̣)|č(̕|̣)|Ī́|ī́|Ž(̦|̧)|ž(̦|̧)|Ḳ̄|ḳ̄|Ṣ̄|ṣ̄|Ṭ̄|ṭ̄|Ạ̈|ạ̈|Ọ̈|ọ̈|Ụ(̄|̈)|ụ(̄|̈))*"/>
 		</xs:restriction>
 	</xs:simpleType>
-	<xs:complexType name="Datum_Monat_oder_Jahr_genau_Typ">
-		<xs:annotation>
-			<xs:documentation>T - Tag geschätzt (entspricht monatsgenau)
-M - Monat geschätzt (entspricht jahrgenau)</xs:documentation>
-		</xs:annotation>
+	<xs:complexType name="Datum_Monat_oder_Jahr_oder_Vollschaetzung_Typ">
 		<xs:simpleContent>
 			<xs:extension base="Zulaessiger_Datumsbereich_Typ">
 				<xs:attribute name="Datumsgenauigkeit" use="required">
-					<xs:simpleType>
-						<xs:annotation>
-							<xs:documentation>siehe Dokumentation zu Datum_Tag_oder_Monat_oder_Jahr_oder_nicht_genau_Typ</xs:documentation>
-						</xs:annotation>
-						<xs:restriction base="xs:string">
-							<xs:enumeration value="T">
-								<xs:annotation>
-									<xs:documentation>Tag geschätzt (entspricht monatsgenau)</xs:documentation>
-								</xs:annotation>
-							</xs:enumeration>
-							<xs:enumeration value="M"/>
-						</xs:restriction>
-					</xs:simpleType>
-				</xs:attribute>
-			</xs:extension>
-		</xs:simpleContent>
-	</xs:complexType>
-	<xs:complexType name="Datum_Monat_oder_Jahr_oder_Vollschaetzung_Typ">
-		<xs:annotation>
-			<xs:documentation>T - Tag geschätzt (entspricht monatsgenau)
+					<xs:annotation>
+						<xs:documentation>T - Tag geschätzt (entspricht monatsgenau)
 M - Monat geschätzt (entspricht jahrgenau)
 V - vollständig geschätzt</xs:documentation>
-		</xs:annotation>
-		<xs:simpleContent>
-			<xs:extension base="Zulaessiger_Datumsbereich_Typ">
-				<xs:attribute name="Datumsgenauigkeit" use="required">
+					</xs:annotation>
 					<xs:simpleType>
 						<xs:annotation>
 							<xs:documentation>siehe Dokumentation zu Datum_Tag_oder_Monat_oder_Jahr_oder_nicht_genau_Typ</xs:documentation>
@@ -201,42 +188,24 @@ V - vollständig geschätzt</xs:documentation>
 		<xs:simpleContent>
 			<xs:extension base="Zulaessiger_Datumsbereich_Typ">
 				<xs:attribute name="Datumsgenauigkeit" use="required">
+					<xs:annotation>
+						<xs:documentation>E = Exakt</xs:documentation>
+					</xs:annotation>
 					<xs:simpleType>
 						<xs:annotation>
-							<xs:documentation>
-								Bei allen geschätzten Angaben darf ein plausibles, genau wirkendes Datum eingetragen werden.
-								D.h. der vielfach praktizierten Konvention monatsgenau bedeutet Einsetzen des 15. und Jahresgenau bedeutet Einsetzen des 01.07. muss nicht gefolgt werden.
-								Im Gegenteil können durch Abweichen von dieser Konvention Verletzungen der Datumshierarchien (z.B. ungenaues Diagnosedatum nach genauem Therapiedatum) vermieden werden.
-								Es ist Sache des Registers, ungenaue Angaben bei bestimmten Anlässen, z.B. Auswertungen, ggf. gesondert zu handhaben.
-							</xs:documentation>
+							<xs:documentation>siehe Dokumentation zu Datum_Tag_oder_Monat_oder_Jahr_oder_nicht_genau_Typ</xs:documentation>
 						</xs:annotation>
 						<xs:restriction base="xs:string">
-							<xs:enumeration value="E">
-								<xs:annotation>
-									<xs:documentation>exakt (entspricht taggenau)</xs:documentation>
-								</xs:annotation>
-							</xs:enumeration>
+							<xs:enumeration value="E"/>
 						</xs:restriction>
 					</xs:simpleType>
 				</xs:attribute>
 			</xs:extension>
 		</xs:simpleContent>
 	</xs:complexType>
-	<xs:simpleType name="DCI_Typ">
-		<xs:annotation>
-			<xs:documentation>O - DCO
-N - DCN
-X - keines</xs:documentation>
-		</xs:annotation>
-		<xs:restriction base="xs:string">
-			<xs:enumeration value="O"/>
-			<xs:enumeration value="N"/>
-			<xs:enumeration value="X"/>
-		</xs:restriction>
-	</xs:simpleType>
 	<xs:complexType name="Diagnose_Typ">
 		<xs:all>
-			<xs:element name="Datum" type="Datum_Monat_oder_Jahr_genau_Typ"/>
+			<xs:element name="Datum" type="Datum_Monat_oder_Jahr_oder_Vollschaetzung_Typ"/>
 			<xs:element name="Inzidenzort" type="Zahl_5stellig_Typ"/>
 			<xs:element name="Primaertumor_ICD" type="Tumor_ICD_Typ"/>
 			<xs:element name="Primaertumor_Topographie_ICD_O" type="Topographie_ICD_O_Typ" minOccurs="0"/>
@@ -246,6 +215,11 @@ X - keines</xs:documentation>
 				</xs:annotation>
 				<xs:simpleType>
 					<xs:restriction base="xs:string">
+						<xs:enumeration value="0">
+							<xs:annotation>
+								<xs:documentation>DCO</xs:documentation>
+							</xs:annotation>
+						</xs:enumeration>
 						<xs:enumeration value="1">
 							<xs:annotation>
 								<xs:documentation>Klinisch ohne tumorspezifische Diagnostik (nur körperliche Untersuchung)</xs:documentation>
@@ -302,7 +276,7 @@ X - keines</xs:documentation>
 			<xs:element name="Modul_Prostata" type="Modul_Prostata_Typ" minOccurs="0"/>
 			<xs:element name="Modul_Malignes_Melanom" type="Modul_Malignes_Melanom_Typ" minOccurs="0"/>
 			<xs:element name="Seitenlokalisation" type="Seitenlokalisation_Typ"/>
-			<xs:element name="DCI" type="DCI_Typ"/>
+			<xs:element name="DCI" type="JN_Typ"/>
 			<xs:element name="Anzahl_Tage_Diagnose_Tod" type="Abstand_Ereignisse_Typ"/>
 		</xs:all>
 	</xs:complexType>
@@ -314,7 +288,7 @@ X - keines</xs:documentation>
 				</xs:annotation>
 			</xs:element>
 			<xs:element name="Menge_Weitere_Klassifikation" type="Menge_Weitere_Klassifikation_Typ" minOccurs="0"/>
-			<xs:element name="Untersuchungsdatum_Verlauf" type="Datum_Monat_oder_Jahr_genau_Typ"/>
+			<xs:element name="Untersuchungsdatum_Verlauf" type="Datum_Monat_oder_Jahr_oder_Vollschaetzung_Typ"/>
 			<xs:element name="Gesamtbeurteilung_Tumorstatus">
 				<xs:annotation>
 					<xs:documentation>
@@ -680,7 +654,7 @@ X - keines</xs:documentation>
 						<xs:enumeration value="5">
 							<xs:annotation>
 								<xs:documentation>nur für C61, TNM8</xs:documentation>
-							</xs:annotation>						
+							</xs:annotation>
 						</xs:enumeration>
 						<xs:enumeration value="X">
 							<xs:annotation>
@@ -1015,10 +989,87 @@ X - keines</xs:documentation>
 		</xs:restriction>
 	</xs:simpleType>
 	<xs:complexType name="Lieferregister_Typ">
-		<xs:attribute name="Bundesland_ID" type="ISO3166_2_Typ" use="required"/>
-		<xs:attribute name="Software_ID" type="Freitext255_Typ" use="optional"/>
-		<xs:attribute name="Software_Version" type="Freitext255_Typ"/>
-		<xs:attribute name="Installations_ID" type="Freitext255_Typ" use="optional"/>
+		<xs:attribute name="Register_ID" use="required">
+			<xs:simpleType>
+				<xs:restriction base="xs:string">
+					<xs:enumeration value="01">
+						<xs:annotation>
+							<xs:documentation>SH</xs:documentation>
+						</xs:annotation>
+					</xs:enumeration>
+					<xs:enumeration value="02">
+						<xs:annotation>
+							<xs:documentation>HH</xs:documentation>
+						</xs:annotation>
+					</xs:enumeration>
+					<xs:enumeration value="03">
+						<xs:annotation>
+							<xs:documentation>NI</xs:documentation>
+						</xs:annotation>
+					</xs:enumeration>
+					<xs:enumeration value="04">
+						<xs:annotation>
+							<xs:documentation>HB</xs:documentation>
+						</xs:annotation>
+					</xs:enumeration>
+					<xs:enumeration value="05">
+						<xs:annotation>
+							<xs:documentation>NW</xs:documentation>
+						</xs:annotation>
+					</xs:enumeration>
+					<xs:enumeration value="06">
+						<xs:annotation>
+							<xs:documentation>HE</xs:documentation>
+						</xs:annotation>
+					</xs:enumeration>
+					<xs:enumeration value="07">
+						<xs:annotation>
+							<xs:documentation>RP</xs:documentation>
+						</xs:annotation>
+					</xs:enumeration>
+					<xs:enumeration value="08">
+						<xs:annotation>
+							<xs:documentation>BW</xs:documentation>
+						</xs:annotation>
+					</xs:enumeration>
+					<xs:enumeration value="09">
+						<xs:annotation>
+							<xs:documentation>BY</xs:documentation>
+						</xs:annotation>
+					</xs:enumeration>
+					<xs:enumeration value="10">
+						<xs:annotation>
+							<xs:documentation>SL</xs:documentation>
+						</xs:annotation>
+					</xs:enumeration>
+					<xs:enumeration value="11">
+						<xs:annotation>
+							<xs:documentation>BE_BB</xs:documentation>
+						</xs:annotation>
+					</xs:enumeration>
+					<xs:enumeration value="13">
+						<xs:annotation>
+							<xs:documentation>MV</xs:documentation>
+						</xs:annotation>
+					</xs:enumeration>
+					<xs:enumeration value="14">
+						<xs:annotation>
+							<xs:documentation>SN</xs:documentation>
+						</xs:annotation>
+					</xs:enumeration>
+					<xs:enumeration value="15">
+						<xs:annotation>
+							<xs:documentation>ST</xs:documentation>
+						</xs:annotation>
+					</xs:enumeration>
+					<xs:enumeration value="16">
+						<xs:annotation>
+							<xs:documentation>TH</xs:documentation>
+						</xs:annotation>
+					</xs:enumeration>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
 	</xs:complexType>
 	<xs:complexType name="Menge_FM_Typ">
 		<xs:sequence>
@@ -1263,7 +1314,7 @@ X - keines</xs:documentation>
 					</xs:restriction>
 				</xs:simpleType>
 			</xs:element>
-			<xs:element name="Version">
+			<xs:element name="Version" minOccurs="0">
 				<xs:simpleType>
 					<xs:restriction base="xs:string">
 						<xs:enumeration value="31">
@@ -1311,7 +1362,7 @@ U = Unbekannt</xs:documentation>
 	</xs:simpleType>
 	<xs:complexType name="OP_Typ">
 		<xs:all>
-			<xs:element name="Datum" type="Datum_Monat_oder_Jahr_genau_Typ"/>
+			<xs:element name="Datum" type="Datum_Monat_oder_Jahr_oder_Vollschaetzung_Typ"/>
 			<xs:element name="Intention">
 				<xs:annotation>
 					<xs:documentation>
@@ -1414,8 +1465,48 @@ U = Unbekannt</xs:documentation>
 					</xs:restriction>
 				</xs:simpleType>
 			</xs:element>
-			<xs:element name="Geburtsdatum" type="Datum_Monat_oder_Jahr_genau_Typ"/>
-			<xs:element name="Tod" type="Tod_Typ" minOccurs="0"/>
+			<xs:element name="Geburtsdatum" type="Datum_Monat_oder_Jahr_oder_Vollschaetzung_Typ"/>
+			<xs:element name="Vitalstatus">
+				<xs:complexType>
+					<xs:choice>
+						<xs:element name="Lebend">
+							<xs:complexType>
+								<xs:sequence>
+									<xs:element name="Datum_follow_up" type="Datum_Tag_genau_Typ"/>
+								</xs:sequence>
+							</xs:complexType>
+						</xs:element>
+						<xs:element name="Verstorben">
+							<xs:complexType>
+								<xs:sequence>
+									<xs:element name="Datum_verstorben" type="Datum_Monat_oder_Jahr_oder_Vollschaetzung_Typ"/>
+									<xs:element name="Menge_Weitere_Todesursachen" minOccurs="0">
+										<xs:complexType>
+											<xs:sequence>
+												<xs:element name="Todesursache_ICD" type="Allgemein_ICD_Typ" maxOccurs="unbounded"/>
+											</xs:sequence>
+										</xs:complexType>
+									</xs:element>
+									<xs:element name="Grundleiden" type="Allgemein_ICD_Typ" minOccurs="0"/>
+								</xs:sequence>
+							</xs:complexType>
+						</xs:element>
+						<xs:element name="Lost_to_follow_up">
+							<xs:complexType>
+								<xs:sequence>
+									<xs:element name="Datum_letzter_Abgleich">
+										<xs:complexType>
+											<xs:complexContent>
+												<xs:extension base="Datum_Tag_genau_Typ"/>
+											</xs:complexContent>
+										</xs:complexType>
+									</xs:element>
+								</xs:sequence>
+							</xs:complexType>
+						</xs:element>
+					</xs:choice>
+				</xs:complexType>
+			</xs:element>
 		</xs:all>
 	</xs:complexType>
 	<xs:complexType name="Protokoll_Typ">
@@ -1428,7 +1519,7 @@ U = Unbekannt</xs:documentation>
 				<xs:complexType>
 					<xs:sequence>
 						<xs:element name="Code"/>
-						<xs:element name="Version"/>
+						<xs:element name="Version" minOccurs="0"/>
 					</xs:sequence>
 				</xs:complexType>
 			</xs:element>
@@ -1589,7 +1680,7 @@ U = Unbekannt</xs:documentation>
 	</xs:simpleType>
 	<xs:complexType name="ST_Typ">
 		<xs:all>
-			<xs:element name="Intention">
+			<xs:element name="Intention" minOccurs="0">
 				<xs:annotation>
 					<xs:documentation>
 						Gibt an, mit welcher Intention die Strahlentherapie geplant wurde.
@@ -1627,7 +1718,7 @@ U = Unbekannt</xs:documentation>
 					</xs:restriction>
 				</xs:simpleType>
 			</xs:element>
-			<xs:element name="Stellung_OP">
+			<xs:element name="Stellung_OP" minOccurs="0">
 				<xs:annotation>
 					<xs:documentation>
 						Gibt an, in welchem Bezug zu einer operativen Therapie die Bestrahlung steht.  
@@ -1677,8 +1768,8 @@ U = Unbekannt</xs:documentation>
 						<xs:element name="Bestrahlung" maxOccurs="unbounded">
 							<xs:complexType>
 								<xs:all>
-									<xs:element name="Datum" type="Datum_Monat_oder_Jahr_genau_Typ"/>
-									<xs:element name="Applikationsart">
+									<xs:element name="Datum" type="Datum_Monat_oder_Jahr_oder_Vollschaetzung_Typ"/>
+									<xs:element name="Applikationsart" minOccurs="0">
 										<xs:complexType>
 											<xs:choice>
 												<xs:element name="Perkutan">
@@ -1746,7 +1837,7 @@ U = Unbekannt</xs:documentation>
 																	</xs:restriction>
 																</xs:simpleType>
 															</xs:element>
-															<xs:element name="Rate_Type">
+															<xs:element name="Rate_Type" minOccurs="0">
 																<xs:simpleType>
 																	<xs:restriction base="xs:string">
 																		<xs:enumeration value="HDR">
@@ -1846,7 +1937,7 @@ U = Unbekannt</xs:documentation>
 								</xs:restriction>
 							</xs:simpleType>
 						</xs:element>
-						<xs:element name="Version">
+						<xs:element name="Version" minOccurs="0">
 							<xs:simpleType>
 								<xs:restriction base="xs:string">
 									<xs:pattern value="200[4-9]|20[12]\d"/>
@@ -1860,7 +1951,7 @@ U = Unbekannt</xs:documentation>
 	</xs:complexType>
 	<xs:complexType name="SYST_Typ">
 		<xs:all>
-			<xs:element name="Datum" type="Datum_Monat_oder_Jahr_genau_Typ"/>
+			<xs:element name="Datum" type="Datum_Monat_oder_Jahr_oder_Vollschaetzung_Typ"/>
 			<xs:element name="Intention">
 				<xs:annotation>
 					<xs:documentation>Gibt an, mit welcher Intention die systemische Therapie geplant wurde.</xs:documentation>
@@ -2469,23 +2560,6 @@ U = Unbekannt</xs:documentation>
 			</xs:element>
 		</xs:all>
 	</xs:complexType>
-	<xs:complexType name="Tod_Typ">
-		<xs:all>
-			<xs:element name="Sterbedatum" type="Datum_Monat_oder_Jahr_oder_Vollschaetzung_Typ">
-				<xs:annotation>
-					<xs:documentation>Unbekanntes Datum: Genauigkeit "V"</xs:documentation>
-				</xs:annotation>
-			</xs:element>
-			<xs:element name="Grundleiden" type="Allgemein_ICD_Typ" minOccurs="0"/>
-			<xs:element name="Menge_Weitere_Todesursachen" minOccurs="0">
-				<xs:complexType>
-					<xs:sequence>
-						<xs:element name="Todesursache_ICD" type="Allgemein_ICD_Typ" maxOccurs="unbounded"/>
-					</xs:sequence>
-				</xs:complexType>
-			</xs:element>
-		</xs:all>
-	</xs:complexType>
 	<xs:complexType name="Topographie_ICD_O_Typ">
 		<xs:sequence>
 			<xs:element name="Code">
@@ -2495,7 +2569,7 @@ U = Unbekannt</xs:documentation>
 					</xs:restriction>
 				</xs:simpleType>
 			</xs:element>
-			<xs:element name="Version">
+			<xs:element name="Version" minOccurs="0">
 				<xs:simpleType>
 					<xs:restriction base="xs:string">
 						<xs:enumeration value="31">
@@ -2527,7 +2601,7 @@ U = Unbekannt</xs:documentation>
 					</xs:restriction>
 				</xs:simpleType>
 			</xs:element>
-			<xs:element name="Version" type="ICD_Version_Typ"/>
+			<xs:element name="Version" type="ICD_Version_Typ" minOccurs="0"/>
 		</xs:sequence>
 	</xs:complexType>
 	<xs:simpleType name="Tumordicke_Typ">
