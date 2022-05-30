@@ -215,11 +215,6 @@ V - vollständig geschätzt</xs:documentation>
 				</xs:annotation>
 				<xs:simpleType>
 					<xs:restriction base="xs:string">
-						<xs:enumeration value="0">
-							<xs:annotation>
-								<xs:documentation>DCO</xs:documentation>
-							</xs:annotation>
-						</xs:enumeration>
 						<xs:enumeration value="1">
 							<xs:annotation>
 								<xs:documentation>Klinisch ohne tumorspezifische Diagnostik (nur körperliche Untersuchung)</xs:documentation>
@@ -228,6 +223,11 @@ V - vollständig geschätzt</xs:documentation>
 						<xs:enumeration value="2">
 							<xs:annotation>
 								<xs:documentation>Klinisch: Klinische Diagnose vor dem Sterbedatum durchgeführt; schließt diagnostische Techniken, inklusive Röntgen, Endoskopie, weitere bildgebende Verfahren, Ultraschall, exploratorische Chirurgie (Laparatomie, etc.) und Autopsie, ohne mikroskopische Gewebediagnose, ein.</xs:documentation>
+							</xs:annotation>
+						</xs:enumeration>
+						<xs:enumeration value="3">
+							<xs:annotation>
+								<xs:documentation>DCO</xs:documentation>
 							</xs:annotation>
 						</xs:enumeration>
 						<xs:enumeration value="4">
@@ -1501,6 +1501,7 @@ U = Unbekannt</xs:documentation>
 											</xs:complexContent>
 										</xs:complexType>
 									</xs:element>
+									<xs:element name="Datum_letzter_Lebendstatus" type="Datum_Tag_genau_Typ" minOccurs="0"/>
 								</xs:sequence>
 							</xs:complexType>
 						</xs:element>
