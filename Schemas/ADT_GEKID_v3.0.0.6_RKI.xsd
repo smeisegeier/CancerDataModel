@@ -215,6 +215,11 @@ V - vollständig geschätzt</xs:documentation>
 				</xs:annotation>
 				<xs:simpleType>
 					<xs:restriction base="xs:string">
+						<xs:enumeration value="0">
+							<xs:annotation>
+								<xs:documentation>DCO</xs:documentation>
+							</xs:annotation>
+						</xs:enumeration>
 						<xs:enumeration value="1">
 							<xs:annotation>
 								<xs:documentation>Klinisch ohne tumorspezifische Diagnostik (nur körperliche Untersuchung)</xs:documentation>
@@ -223,11 +228,6 @@ V - vollständig geschätzt</xs:documentation>
 						<xs:enumeration value="2">
 							<xs:annotation>
 								<xs:documentation>Klinisch: Klinische Diagnose vor dem Sterbedatum durchgeführt; schließt diagnostische Techniken, inklusive Röntgen, Endoskopie, weitere bildgebende Verfahren, Ultraschall, exploratorische Chirurgie (Laparatomie, etc.) und Autopsie, ohne mikroskopische Gewebediagnose, ein.</xs:documentation>
-							</xs:annotation>
-						</xs:enumeration>
-						<xs:enumeration value="3">
-							<xs:annotation>
-								<xs:documentation>DCO</xs:documentation>
 							</xs:annotation>
 						</xs:enumeration>
 						<xs:enumeration value="4">
@@ -1044,7 +1044,12 @@ V - vollständig geschätzt</xs:documentation>
 					</xs:enumeration>
 					<xs:enumeration value="11">
 						<xs:annotation>
-							<xs:documentation>BE_BB</xs:documentation>
+							<xs:documentation>BE</xs:documentation>
+						</xs:annotation>
+					</xs:enumeration>
+					<xs:enumeration value="12">
+						<xs:annotation>
+							<xs:documentation>BB</xs:documentation>
 						</xs:annotation>
 					</xs:enumeration>
 					<xs:enumeration value="13">
@@ -1065,6 +1070,11 @@ V - vollständig geschätzt</xs:documentation>
 					<xs:enumeration value="16">
 						<xs:annotation>
 							<xs:documentation>TH</xs:documentation>
+						</xs:annotation>
+					</xs:enumeration>
+					<xs:enumeration value="17">
+						<xs:annotation>
+							<xs:documentation>BE_BB</xs:documentation>
 						</xs:annotation>
 					</xs:enumeration>
 				</xs:restriction>
@@ -1501,7 +1511,6 @@ U = Unbekannt</xs:documentation>
 											</xs:complexContent>
 										</xs:complexType>
 									</xs:element>
-									<xs:element name="Datum_letzter_Lebendstatus" type="Datum_Tag_genau_Typ" minOccurs="0"/>
 								</xs:sequence>
 							</xs:complexType>
 						</xs:element>
@@ -1593,12 +1602,6 @@ U = Unbekannt</xs:documentation>
 			</xs:enumeration>
 		</xs:restriction>
 	</xs:simpleType>
-	<xs:complexType name="Residualstatus_Typ">
-		<xs:sequence>
-			<xs:element name="Lokale_Beurteilung_Residualstatus" type="R_Typ" minOccurs="0"/>
-			<xs:element name="Gesamtbeurteilung_Residualstatus" type="R_Typ" minOccurs="0"/>
-		</xs:sequence>
-	</xs:complexType>
 	<xs:simpleType name="Seite_Zielgebiet_Typ">
 		<xs:annotation>
 			<xs:documentation>
@@ -1904,6 +1907,14 @@ U = Unbekannt</xs:documentation>
 													</xs:complexType>
 												</xs:element>
 												<xs:element name="Sonstige">
+													<xs:complexType>
+														<xs:all>
+															<xs:element name="Zielgebiet" type="Zielgebiet_Typ" minOccurs="0"/>
+															<xs:element name="Seite_Zielgebiet" type="Seite_Zielgebiet_Typ" minOccurs="0"/>
+														</xs:all>
+													</xs:complexType>
+												</xs:element>
+												<xs:element name="Unbekannt">
 													<xs:complexType>
 														<xs:all>
 															<xs:element name="Zielgebiet" type="Zielgebiet_Typ" minOccurs="0"/>
