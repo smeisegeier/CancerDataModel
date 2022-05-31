@@ -1426,7 +1426,7 @@ U = Unbekannt</xs:documentation>
 					</xs:sequence>
 				</xs:complexType>
 			</xs:element>
-			<xs:element name="Residualstatus" type="Residualstatus_Typ" minOccurs="0"/>
+			<xs:element name="Lokale_Beurteilung_Residualstatus" type="R_Typ" minOccurs="0"/>
 			<xs:element name="Anzahl_Tage_Diagnose_OP" type="Abstand_Ereignisse_Typ"/>
 		</xs:all>
 		<xs:attribute name="OP_ID" type="FreitextID_Typ" use="optional"/>
