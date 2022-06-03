@@ -866,95 +866,6 @@ V - vollständig geschätzt</xs:documentation>
 			</xs:enumeration>
 		</xs:restriction>
 	</xs:simpleType>
-	<xs:simpleType name="ISO3166_2_Typ">
-		<xs:annotation>
-			<xs:documentation>
-				Bundeslandcodes nach ISO3166-2
-			</xs:documentation>
-		</xs:annotation>
-		<xs:restriction base="xs:string">
-			<xs:enumeration value="DE-BW">
-				<xs:annotation>
-					<xs:documentation>Baden-Württemberg</xs:documentation>
-				</xs:annotation>
-			</xs:enumeration>
-			<xs:enumeration value="DE-BY">
-				<xs:annotation>
-					<xs:documentation>Bayern</xs:documentation>
-				</xs:annotation>
-			</xs:enumeration>
-			<xs:enumeration value="DE-BE">
-				<xs:annotation>
-					<xs:documentation>Berlin</xs:documentation>
-				</xs:annotation>
-			</xs:enumeration>
-			<xs:enumeration value="DE-BB">
-				<xs:annotation>
-					<xs:documentation>Brandenburg</xs:documentation>
-				</xs:annotation>
-			</xs:enumeration>
-			<xs:enumeration value="DE-HB">
-				<xs:annotation>
-					<xs:documentation>Bremen</xs:documentation>
-				</xs:annotation>
-			</xs:enumeration>
-			<xs:enumeration value="DE-HH">
-				<xs:annotation>
-					<xs:documentation>Hamburg</xs:documentation>
-				</xs:annotation>
-			</xs:enumeration>
-			<xs:enumeration value="DE-HE">
-				<xs:annotation>
-					<xs:documentation>Hessen</xs:documentation>
-				</xs:annotation>
-			</xs:enumeration>
-			<xs:enumeration value="DE-MV">
-				<xs:annotation>
-					<xs:documentation>Mecklenburg-Vorpommern</xs:documentation>
-				</xs:annotation>
-			</xs:enumeration>
-			<xs:enumeration value="DE-NI">
-				<xs:annotation>
-					<xs:documentation>Niedersachsen</xs:documentation>
-				</xs:annotation>
-			</xs:enumeration>
-			<xs:enumeration value="DE-NW">
-				<xs:annotation>
-					<xs:documentation>Nordrhein-Westfalen</xs:documentation>
-				</xs:annotation>
-			</xs:enumeration>
-			<xs:enumeration value="DE-RP">
-				<xs:annotation>
-					<xs:documentation>Rheinland-Pfalz</xs:documentation>
-				</xs:annotation>
-			</xs:enumeration>
-			<xs:enumeration value="DE-SL">
-				<xs:annotation>
-					<xs:documentation>Saarland</xs:documentation>
-				</xs:annotation>
-			</xs:enumeration>
-			<xs:enumeration value="DE-SN">
-				<xs:annotation>
-					<xs:documentation>Sachsen</xs:documentation>
-				</xs:annotation>
-			</xs:enumeration>
-			<xs:enumeration value="DE-ST">
-				<xs:annotation>
-					<xs:documentation>Sachsen-Anhalt</xs:documentation>
-				</xs:annotation>
-			</xs:enumeration>
-			<xs:enumeration value="DE-SH">
-				<xs:annotation>
-					<xs:documentation>Schleswig-Holstein</xs:documentation>
-				</xs:annotation>
-			</xs:enumeration>
-			<xs:enumeration value="DE-TH">
-				<xs:annotation>
-					<xs:documentation>Thüringen</xs:documentation>
-				</xs:annotation>
-			</xs:enumeration>
-		</xs:restriction>
-	</xs:simpleType>
 	<xs:simpleType name="JN_Typ">
 		<xs:restriction base="xs:string">
 			<xs:enumeration value="J">
@@ -1352,24 +1263,6 @@ V - vollständig geschätzt</xs:documentation>
 			</xs:element>
 		</xs:sequence>
 	</xs:complexType>
-	<xs:simpleType name="NU_Typ">
-		<xs:annotation>
-			<xs:documentation>N = Nein
-U = Unbekannt</xs:documentation>
-		</xs:annotation>
-		<xs:restriction base="xs:string">
-			<xs:enumeration value="N">
-				<xs:annotation>
-					<xs:documentation>Nein</xs:documentation>
-				</xs:annotation>
-			</xs:enumeration>
-			<xs:enumeration value="U">
-				<xs:annotation>
-					<xs:documentation>Unbekannt</xs:documentation>
-				</xs:annotation>
-			</xs:enumeration>
-		</xs:restriction>
-	</xs:simpleType>
 	<xs:complexType name="OP_Typ">
 		<xs:all>
 			<xs:element name="Datum" type="Datum_Monat_oder_Jahr_oder_Vollschaetzung_Typ"/>
@@ -2624,18 +2517,6 @@ U = Unbekannt</xs:documentation>
 			<xs:fractionDigits value="1"/>
 			<xs:minInclusive value="0.1"/>
 			<xs:maxInclusive value="99.0"/>
-		</xs:restriction>
-	</xs:simpleType>
-	<xs:simpleType name="U_Typ">
-		<xs:annotation>
-			<xs:documentation>U = Unbekannt</xs:documentation>
-		</xs:annotation>
-		<xs:restriction base="xs:string">
-			<xs:enumeration value="U">
-				<xs:annotation>
-					<xs:documentation>Unbekannt</xs:documentation>
-				</xs:annotation>
-			</xs:enumeration>
 		</xs:restriction>
 	</xs:simpleType>
 	<xs:simpleType name="Zahl_3stellig_Typ">
